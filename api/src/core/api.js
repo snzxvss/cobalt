@@ -348,23 +348,20 @@ export const runAPI = async (express, app, __dirname, isPrimary = true) => {
     }
 
     http.createServer(app).listen({
-        port: env.apiPort,
+        port: process.env.PORT || env.apiPort,
         host: env.listenAddress,
         reusePort: env.instanceCount > 1 || undefined
     }, () => {
         if (isPrimary) {
-            console.log(`\n` +
-                Bright(Cyan("cobalt ")) + Bright("API ^ω⁠^") + "\n" +
-
-                Bright("url: ") + Bright(Cyan(env.apiURL)) + "\n" +
-                Bright("port: ") + process.env.PORT + "\n"
-            );
+            console.log(`cobalt API ^ω^`);
+            console.log(`url: ${env.apiURL}`);
+            console.log(`port: ${process.env.PORT}`);
         }
-
+    
         if (env.apiKeyURL) {
             APIKeys.setup(env.apiKeyURL);
         }
-
+    
         if (env.cookiePath) {
             Cookies.setup(env.cookiePath);
         }
