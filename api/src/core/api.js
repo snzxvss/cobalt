@@ -357,7 +357,7 @@ export const runAPI = async (express, app, __dirname, isPrimary = true) => {
                 Bright(Cyan("cobalt ")) + Bright("API ^ω⁠^") + "\n" +
 
                 Bright("url: ") + Bright(Cyan(env.apiURL)) + "\n" +
-                Bright("port: ") + env.apiPort + "\n"
+                Bright("port: ") + process.env.PORT + "\n"
             );
         }
 
