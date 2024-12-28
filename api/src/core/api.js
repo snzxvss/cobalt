@@ -47,7 +47,7 @@ export const runAPI = async (express, app, __dirname, isPrimary = true) => {
 
     const serverInfo = JSON.stringify({
         cobalt: {
-            version: version,
+            // version: version,
             url: env.apiURL,
             startTime: `${startTimestamp}`,
             durationLimit: env.durationLimit,
@@ -56,7 +56,7 @@ export const runAPI = async (express, app, __dirname, isPrimary = true) => {
                 return friendlyServiceName(e);
             }),
         },
-        git,
+        // git,
     })
 
     const handleRateExceeded = (_, res) => {
