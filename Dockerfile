@@ -20,6 +20,8 @@ WORKDIR /app
 COPY --from=build --chown=node:node /prod/api /app
 COPY --from=build --chown=node:node /app/.git /app/.git
 
+COOKIE_PATH:/cookies.json
+
 USER node
 
 EXPOSE 9000
