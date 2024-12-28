@@ -27,7 +27,7 @@ import * as Cookies from "../processing/cookie/manager.js";
 //     remote: await getRemote(),
 // }
 
-const version = await getVersion();
+// const version = await getVersion();
 
 const acceptRegex = /^application\/json(; charset=utf-8)?$/;
 
